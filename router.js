@@ -3,9 +3,11 @@ import Controller from './controller.js';
 
 const router = express.Router();
 
-router.get("/events", Controller.getEvents)
-router.post("/event", Controller.createEvent)
-router.delete("/eventDel", Controller.deleteEvent)
-router.patch("/eventUpd", Controller.updateEvent)
+router.get("/events", Controller.getEvents);
+router.post("/event", Controller.createEvent);
+router.delete("/eventDel", Controller.deleteEvent);
+router.post("/eventUpd", Controller.updateEvent);
+
+router.post("/login", Controller.login);
 
 export default router;
