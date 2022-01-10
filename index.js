@@ -1,7 +1,10 @@
+import dotenv from "dotenv"
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
+
+dotenv.config();
 
 const app = express();
 
@@ -15,9 +18,10 @@ app.get("/", (req, res) => {
 
 const serve = async () => {
   try {
-    // await mongoose.connect()
-    app.listen(process.env.PORT || 3000, () => {
-      console.log("API started")
+    await mongoose.connect(process.env.MONGO_URI).then(res => {
+      app.listen(process.env.PORT || 3000, () => {
+        console.log("API started")
+      })
     })
   } catch (e) {
     console.log(e);
