@@ -1,7 +1,9 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
+
+const { Schema, model } = mongoose;
 
 const event = new Schema({
-  agentId: { type: Schema.Types.ObjectId, ref="agent", required: true },
+  agentId: { type: Number, required: true },
   datetime: { type: Number, required: true },
   date: { type: String },
   duration: { type: Number, default: null },
