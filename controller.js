@@ -65,6 +65,10 @@ class Controller {
       });
     }
   }
+
+  async logout(req, res, next) {
+    return res.status(200).json("Logout successfull");
+  }
 }
 
 export default new Controller();

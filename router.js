@@ -9,5 +9,6 @@ router.delete("/eventDel", Controller.deleteEvent);
 router.post("/eventUpd", Controller.updateEvent);
 
 router.post("/login", Controller.login);
+router.post("/logout", Controller.logout);
 
 export default router;
